@@ -1,0 +1,70 @@
+{
+  "modules": {
+    "dns": {
+      "domain": "yahoo.com",
+      "a_records": {
+        "domain": "yahoo.com",
+        "record_type": "A",
+        "records": [
+          "98.137.11.164",
+          "74.6.231.20",
+          "98.137.11.163",
+          "74.6.143.26",
+          "74.6.231.21",
+          "74.6.143.25"
+        ],
+        "count": 6,
+        "status": "success"
+      },
+      "aaaa_records": {
+        "domain": "yahoo.com",
+        "record_type": "AAAA",
+        "records": [
+          "2001:4998:0124:1507:0000:0000:0000:f000",
+          "2001:4998:0044:3507:0000:0000:0000:8001",
+          "2001:4998:0124:1507:0000:0000:0000:f001",
+          "2001:4998:0024:120d:0000:0000:0001:0001",
+          "2001:4998:0044:3507:0000:0000:0000:8000",
+          "2001:4998:0024:120d:0000:0000:0001:0000"
+        ],
+        "count": 6,
+        "status": "success"
+      },
+      "mx_records": {
+        "domain": "yahoo.com",
+        "record_type": "MX",
+        "records": [
+          "mta5.am0.yahoodns.net",
+          "mta6.am0.yahoodns.net",
+          "mta7.am0.yahoodns.net"
+        ],
+        "count": 3,
+        "status": "success"
+      },
+      "ns_records": {
+        "domain": "yahoo.com",
+        "record_type": "NS",
+        "records": [
+          "ns4.yahoo.com",
+          "ns3.yahoo.com",
+          "ns1.yahoo.com",
+          "ns5.yahoo.com",
+          "ns2.yahoo.com"
+        ],
+        "count": 5,
+        "status": "success"
+      },
+      "txt_records": {
+        "domain": "yahoo.com",
+        "record_type": "TXT",
+        "records": [],
+        "count": 0,
+        "status": "no_records"
+      },
+      "subdomains": {
+        "discovered": [],
+        "count": 0
+      }
+    }
+  }
+}
