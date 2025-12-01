@@ -1,6 +1,4 @@
-Here is a professional, ready-to-use README.md for your Recony v3.1 project.
-Just create a file named README.md in your project root and paste this entire content. It’s already beautifully formatted for GitHub/GitLab/any markdown viewer.
-Markdown# 🛡️ Recony v3.1 – All-in-One Automated Reconnaissance Framework
+🛡️ Recony v3.1 – All-in-One Automated Reconnaissance Framework
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue.svg" alt="Python 3.9+">
