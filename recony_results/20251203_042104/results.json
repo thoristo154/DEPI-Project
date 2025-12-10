@@ -1,0 +1,89 @@
+{
+    "scan_info": {
+        "target": "yahoo.com",
+        "domain": "yahoo.com",
+        "type": "domain",
+        "command": "dns",
+        "start_time": "2025-12-03T04:21:05.942259",
+        "version": "3.4",
+        "end_time": "2025-12-03T04:21:21.306906"
+    },
+    "modules": {
+        "dns": {
+            "status": "success",
+            "all_records": {
+                "domain": "yahoo.com",
+                "queries": {
+                    "A": {
+                        "domain": "yahoo.com",
+                        "record_type": "A",
+                        "records": [],
+                        "success": false,
+                        "error": "The resolution lifetime expired after 5.074 seconds: Server Do53:8.8.8.8@53 answered The DNS operation timed out."
+                    },
+                    "AAAA": {
+                        "domain": "yahoo.com",
+                        "record_type": "AAAA",
+                        "records": [
+                            "2001:4998:24:120d::1:1",
+                            "2001:4998:24:120d::1:0",
+                            "2001:4998:124:1507::f000",
+                            "2001:4998:44:3507::8001",
+                            "2001:4998:124:1507::f001",
+                            "2001:4998:44:3507::8000"
+                        ],
+                        "success": true
+                    },
+                    "MX": {
+                        "domain": "yahoo.com",
+                        "record_type": "MX",
+                        "records": [
+                            {
+                                "preference": 1,
+                                "exchange": "mta7.am0.yahoodns.net."
+                            },
+                            {
+                                "preference": 1,
+                                "exchange": "mta5.am0.yahoodns.net."
+                            },
+                            {
+                                "preference": 1,
+                                "exchange": "mta6.am0.yahoodns.net."
+                            }
+                        ],
+                        "success": true
+                    },
+                    "NS": {
+                        "domain": "yahoo.com",
+                        "record_type": "NS",
+                        "records": [],
+                        "success": false,
+                        "error": "The resolution lifetime expired after 5.082 seconds: Server Do53:8.8.8.8@53 answered The DNS operation timed out."
+                    },
+                    "TXT": {
+                        "domain": "yahoo.com",
+                        "record_type": "TXT",
+                        "records": [],
+                        "success": false,
+                        "error": "The resolution lifetime expired after 5.026 seconds: Server Do53:8.8.8.8@53 answered The DNS operation timed out."
+                    },
+                    "SOA": {
+                        "domain": "yahoo.com",
+                        "record_type": "SOA",
+                        "records": [
+                            {
+                                "mname": "ns1.yahoo.com.",
+                                "rname": "hostmaster.yahoo-inc.com.",
+                                "serial": 2025120208,
+                                "expire": 1814400
+                            }
+                        ],
+                        "success": true
+                    }
+                },
+                "total_records": 10
+            },
+            "duration": 15.36335825920105
+        }
+    }
+}

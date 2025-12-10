@@ -1,0 +1,112 @@
+{
+    "scan_info": {
+        "target": "yahoo.com",
+        "domain": "yahoo.com",
+        "type": "domain",
+        "command": "dns",
+        "start_time": "2025-12-03T02:34:12.552403",
+        "version": "3.4",
+        "end_time": "2025-12-03T02:34:13.074501"
+    },
+    "modules": {
+        "dns": {
+            "status": "success",
+            "all_records": {
+                "domain": "yahoo.com",
+                "queries": {
+                    "A": {
+                        "domain": "yahoo.com",
+                        "record_type": "A",
+                        "records": [
+                            "74.6.143.25",
+                            "98.137.11.164",
+                            "74.6.231.20",
+                            "98.137.11.163",
+                            "74.6.231.21",
+                            "74.6.143.26"
+                        ],
+                        "success": true
+                    },
+                    "AAAA": {
+                        "domain": "yahoo.com",
+                        "record_type": "AAAA",
+                        "records": [
+                            "2001:4998:44:3507::8000",
+                            "2001:4998:44:3507::8001",
+                            "2001:4998:124:1507::f001",
+                            "2001:4998:124:1507::f000",
+                            "2001:4998:24:120d::1:0",
+                            "2001:4998:24:120d::1:1"
+                        ],
+                        "success": true
+                    },
+                    "MX": {
+                        "domain": "yahoo.com",
+                        "record_type": "MX",
+                        "records": [
+                            {
+                                "preference": 1,
+                                "exchange": "mta7.am0.yahoodns.net."
+                            },
+                            {
+                                "preference": 1,
+                                "exchange": "mta5.am0.yahoodns.net."
+                            },
+                            {
+                                "preference": 1,
+                                "exchange": "mta6.am0.yahoodns.net."
+                            }
+                        ],
+                        "success": true
+                    },
+                    "NS": {
+                        "domain": "yahoo.com",
+                        "record_type": "NS",
+                        "records": [
+                            "ns1.yahoo.com.",
+                            "ns5.yahoo.com.",
+                            "ns4.yahoo.com.",
+                            "ns2.yahoo.com.",
+                            "ns3.yahoo.com."
+                        ],
+                        "success": true
+                    },
+                    "TXT": {
+                        "domain": "yahoo.com",
+                        "record_type": "TXT",
+                        "records": [
+                            "google-site-verification=2b8irRvU5a2h4Mb-H_fdqNrqWjS00qmPfPcWqm8BhxI",
+                            "google-site-verification=xoBvU6aKxP0gYgNL0iXqF0EccAg6nFrO7XxsHnc3iNQ",
+                            "_globalsign-domain-verification=HOeO-_wfYsqBPIRhct0u92OioWzwfg5YahDu63Jvbg",
+                            "google-site-verification=2b0Glh8l2icXIAgAcjOcFx16Jt26yWDgEyrk5hPD-ZY",
+                            "google-site-verification=GU8WAl0zPqaxdcZqDjuN7pqdfPCpR9Amz9rwxMG91qw",
+                            "edb3bff2c0d64622a9b2250438277a59",
+                            "google-site-verification=w4N2bNopAWw1xYrdXKORILxx-WW3_LIiyX6dIMIidgk",
+                            "google-site-verification=GLp01gkFNopm_JItbLxml4iuVbTgJa3rKu0-eq1RvsE",
+                            "v=spf1 redirect=_spf.mail.yahoo.com",
+                            "google-site-verification=Z3-Vh6zqUMgybVH4wQl1GxKSKN7JE13kyCyeZ3TZZ-I",
+                            "Zoom=13284637",
+                            "facebook-domain-verification=gysqrcd69g0ej34f4jfn0huivkym1p"
+                        ],
+                        "success": true
+                    },
+                    "SOA": {
+                        "domain": "yahoo.com",
+                        "record_type": "SOA",
+                        "records": [
+                            {
+                                "mname": "ns1.yahoo.com.",
+                                "rname": "hostmaster.yahoo-inc.com.",
+                                "serial": 2025120208,
+                                "expire": 1814400
+                            }
+                        ],
+                        "success": true
+                    }
+                },
+                "total_records": 33
+            },
+            "duration": 0.5219295024871826
+        }
+    }
+}

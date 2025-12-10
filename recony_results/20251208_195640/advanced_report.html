@@ -1,0 +1,1306 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Recony Security Report - yahoo.com - Advanced Analytics Report</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+                
+        <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --info-color: #6b7280;
+            --dark-color: #111827;
+            --light-color: #f9fafb;
+            --border-color: #e5e7eb;
+            --card-bg: #ffffff;
+            --sidebar-bg: #1f2937;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .report-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .report-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .report-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M 15 0 L 0 0 0 15" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        
+        .report-header h1 {
+            font-size: 3.2em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+        
+        .report-header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        }
+        
+        .executive-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .overview-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .overview-icon {
+            font-size: 2.5em;
+            margin-right: 20px;
+            opacity: 0.8;
+        }
+        
+        .overview-content h3 {
+            font-size: 1em;
+            color: var(--info-color);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .overview-value {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+        
+        .overview-value.critical {
+            color: var(--danger-color);
+        }
+        
+        .overview-value.score-excellent { color: var(--success-color); }
+        .overview-value.score-good { color: #3b82f6; }
+        .overview-value.score-fair { color: var(--warning-color); }
+        .overview-value.score-poor { color: #f97316; }
+        .overview-value.score-critical { color: var(--danger-color); }
+        
+        .overview-subtext {
+            font-size: 0.9em;
+            color: var(--info-color);
+        }
+        
+        .risk-matrix {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .risk-matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .matrix-header {
+            padding: 15px;
+            font-weight: 600;
+            color: var(--dark-color);
+            border-bottom: 3px solid var(--border-color);
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        
+        .matrix-cell {
+            padding: 25px 15px;
+            font-size: 2em;
+            font-weight: 800;
+            border-radius: 10px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .matrix-cell:hover {
+            transform: scale(1.05);
+        }
+        
+        .matrix-cell.critical { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .matrix-cell.high { background: linear-gradient(135deg, #f97316, #ea580c); }
+        .matrix-cell.medium { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .matrix-cell.low { background: linear-gradient(135deg, #10b981, #059669); }
+        .matrix-cell.info { background: linear-gradient(135deg, #6b7280, #4b5563); }
+        
+        .top-insights {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .insight-card {
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+        }
+        
+        .insight-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .insight-card.critical { border-left-color: var(--danger-color); }
+        .insight-card.high { border-left-color: #f97316; }
+        .insight-card.medium { border-left-color: var(--warning-color); }
+        .insight-card.warning { border-left-color: #eab308; }
+        .insight-card.info { border-left-color: var(--info-color); }
+        
+        .insight-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .insight-type {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 15px;
+        }
+        
+        .insight-card.critical .insight-type { background: #fee2e2; color: var(--danger-color); }
+        .insight-card.high .insight-type { background: #ffedd5; color: #f97316; }
+        .insight-card.medium .insight-type { background: #fef3c7; color: var(--warning-color); }
+        .insight-card.warning .insight-type { background: #fef9c3; color: #eab308; }
+        .insight-card.info .insight-type { background: #f3f4f6; color: var(--info-color); }
+        
+        .insight-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            flex: 1;
+        }
+        
+        .insight-content p {
+            margin-bottom: 15px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        .insight-recommendation {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            font-size: 0.95em;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .dashboard-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        
+        .dashboard-card.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        .score-gauges {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .score-gauge {
+            text-align: center;
+        }
+        
+        .gauge-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+        
+        .gauge-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            font-weight: 800;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tech-category {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .module-tabs {
+            margin-top: 20px;
+        }
+        
+        .tab-headers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .tab-header {
+            padding: 12px 24px;
+            background: #f3f4f6;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab-header:hover {
+            background: #e5e7eb;
+        }
+        
+        .tab-header.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-header.success .tab-status { background: var(--success-color); }
+        .tab-header.error .tab-status { background: var(--danger-color); }
+        .tab-header.warning .tab-status { background: var(--warning-color); }
+        
+        .tab-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .module-header {
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .module-header.success { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+        .module-header.error { background: linear-gradient(135deg, #fee2e2, #fecaca); }
+        .module-header.warning { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+        
+        .module-stats {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .stat {
+            padding: 8px 16px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .section-header {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            padding: 25px 40px;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--accent-color);
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .section-header:hover {
+            background: linear-gradient(to right, #e9ecef, #dee2e6);
+            transform: translateX(5px);
+        }
+        
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .section-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            background: var(--card-bg);
+        }
+        
+        .section-content.expanded {
+            padding: 40px;
+            max-height: 10000px;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--info-color);
+        }
+        
+        .detail-value {
+            font-weight: 500;
+        }
+        
+        .detail-value.success { color: var(--success-color); }
+        .detail-value.warning { color: var(--warning-color); }
+        .detail-value.error { color: var(--danger-color); }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-badge.open { background: #d1fae5; color: #065f46; }
+        .status-badge.closed { background: #fee2e2; color: #991b1b; }
+        
+        .risk-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .risk-badge.critical { background: var(--danger-color); }
+        .risk-badge.high { background: #f97316; }
+        .risk-badge.medium { background: var(--warning-color); }
+        .risk-badge.low { background: var(--success-color); }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .module-details {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .report-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .section-header {
+                background: #f8f9fa !important;
+                color: black !important;
+            }
+            
+            .dashboard-card {
+                break-inside: avoid;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .executive-overview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .report-header {
+                padding: 30px 20px;
+            }
+            
+            .report-header h1 {
+                font-size: 2.2em;
+            }
+            
+            .executive-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                padding: 20px 15px;
+                font-size: 1.1em;
+            }
+            
+            .section-content.expanded {
+                padding: 20px 15px;
+            }
+            
+            .tab-headers {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+            
+            .module-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .module-stats {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .score-gauges {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .risk-matrix-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-header {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+        }
+        </style>
+        
+            </head>
+            <body>
+                <div class="report-container">
+                    <div class="report-header">
+                        <h1><i class="fas fa-chart-network"></i> Recony Security Report - yahoo.com</h1>
+                        <div class="subtitle">Advanced Security Intelligence & Analytics Platform</div>
+                        <div class="subtitle">Generated by Recony Security Intelligence Framework</div>
+                        <div class="subtitle">December 08, 2025 at 19:56:54</div>
+                    </div>
+                    
+                    <div class="report-body">
+                        
+            <div class="section executive-summary" id="executive-summary">
+                <h2 class="section-header" onclick="toggleSection('executive-summary')">
+                    📊 Executive Summary & Key Findings
+                    <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="section-content expanded">
+                    <div class="executive-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">🎯</div>
+                            <div class="overview-content">
+                                <h3>Target</h3>
+                                <div class="overview-value">yahoo.com</div>
+                                <div class="overview-subtext">DOMAIN Assessment</div>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">📈</div>
+                            <div class="overview-content">
+                                <h3>Overall Security Score</h3>
+                                <div class="overview-value score-fair">
+                                    70/100
+                                </div>
+                                <div class="overview-subtext">Fair</div>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">⚠️</div>
+                            <div class="overview-content">
+                                <h3>Critical Findings</h3>
+                                <div class="overview-value critical">0</div>
+                                <div class="overview-subtext">Require Immediate Action</div>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">✅</div>
+                            <div class="overview-content">
+                                <h3>Modules Executed</h3>
+                                <div class="overview-value">1</div>
+                                <div class="overview-subtext">1 Successful</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Risk Matrix -->
+                    <div class="risk-matrix-section">
+                        <h3>Risk Matrix</h3>
+                        <div class="risk-matrix">
+                            <div class="risk-matrix-grid">
+                                <div class="matrix-header">Critical</div>
+                                <div class="matrix-header">High</div>
+                                <div class="matrix-header">Medium</div>
+                                <div class="matrix-header">Low</div>
+                                <div class="matrix-header">Info</div>
+                                
+                                <div class="matrix-cell critical">0</div>
+                                <div class="matrix-cell high">0</div>
+                                <div class="matrix-cell medium">0</div>
+                                <div class="matrix-cell low">0</div>
+                                <div class="matrix-cell info">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Insights -->
+                    <div class="top-insights">
+                        <h3>Top Security Insights</h3>
+                        <div class="insights-grid">
+            
+                            <div class="insight-card medium">
+                                <div class="insight-header">
+                                    <span class="insight-type">MEDIUM</span>
+                                    <span class="insight-title">SSL/TLS Security Weaknesses</span>
+                                </div>
+                                <div class="insight-content">
+                                    <p>SSL/TLS security score is 0/100, indicating potential vulnerabilities.</p>
+                                    <div class="insight-recommendation">
+                                        <strong>Recommendation:</strong> Update SSL/TLS configuration and consider certificate renewal.
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="insight-card medium">
+                                <div class="insight-header">
+                                    <span class="insight-type">MEDIUM</span>
+                                    <span class="insight-title">HTTP Security Headers Missing</span>
+                                </div>
+                                <div class="insight-content">
+                                    <p>HTTP security headers score is 0/100.</p>
+                                    <div class="insight-recommendation">
+                                        <strong>Recommendation:</strong> Implement missing security headers like CSP, HSTS, and X-Frame-Options.
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                    
+                    <!-- Scan Metadata -->
+                    <div class="scan-metadata">
+                        <h3>Scan Information</h3>
+                        <div class="metadata-grid">
+                            <div class="metadata-item">
+                                <span class="metadata-label">Scan Start:</span>
+                                <span class="metadata-value">2025-12-08T19:56:44.488882</span>
+                            </div>
+                            <div class="metadata-item">
+                                <span class="metadata-label">Report Generated:</span>
+                                <span class="metadata-value">2025-12-08 19:56:54</span>
+                            </div>
+                            <div class="metadata-item">
+                                <span class="metadata-label">Target Type:</span>
+                                <span class="metadata-value">DOMAIN</span>
+                            </div>
+                            <div class="metadata-item">
+                                <span class="metadata-label">Total Findings:</span>
+                                <span class="metadata-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                        
+            <div class="section" id="visualizations">
+                <h2 class="section-header" onclick="toggleSection('visualizations')">
+                    📈 Data Analytics & Visualizations
+                    <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="dashboard-grid">
+            
+                        <div class="dashboard-card full-width">
+                            <h3>Risk Distribution</h3>
+                            <div class="chart-container">
+                                <canvas id="riskChart" width="800" height="400"></canvas>
+                            </div>
+                            <div class="chart-data" id="riskData" style="display: none;">
+                                {"critical": 0, "high": 0, "medium": 0, "low": 0, "info": 0, "total": 0}
+                            </div>
+                        </div>
+            
+                        <div class="dashboard-card">
+                            <h3>Module Execution Status</h3>
+                            <div class="chart-container">
+                                <canvas id="moduleStatusChart" width="400" height="300"></canvas>
+                            </div>
+                            <div class="chart-data" id="moduleStatusData" style="display: none;">
+                                {"success": 1, "error": 0, "warning": 0, "total": 1}
+                            </div>
+                        </div>
+            
+                        <div class="dashboard-card">
+                            <h3>Open Ports by Service</h3>
+                            <div class="chart-container">
+                                <canvas id="portChart" width="400" height="300"></canvas>
+                            </div>
+                            <div class="chart-data" id="portData" style="display: none;">
+                                []
+                            </div>
+                        </div>
+            
+                        <div class="dashboard-card">
+                            <h3>Security Scores</h3>
+                            <div class="score-gauges">
+                                <div class="score-gauge">
+                                    <div class="gauge-label">Overall</div>
+                                    <div class="gauge-container">
+                                        <canvas id="overallScoreGauge" width="150" height="150"></canvas>
+                                        <div class="gauge-value">70</div>
+                                    </div>
+                                </div>
+                                <div class="score-gauge">
+                                    <div class="gauge-label">SSL/TLS</div>
+                                    <div class="gauge-container">
+                                        <canvas id="sslScoreGauge" width="150" height="150"></canvas>
+                                        <div class="gauge-value">0</div>
+                                    </div>
+                                </div>
+                                <div class="score-gauge">
+                                    <div class="gauge-label">HTTP Headers</div>
+                                    <div class="gauge-container">
+                                        <canvas id="httpScoreGauge" width="150" height="150"></canvas>
+                                        <div class="gauge-value">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="dashboard-card full-width">
+                            <h3>Scan Execution Timeline</h3>
+                            <div class="timeline-chart">
+                                <div class="timeline-container">
+                                    <canvas id="timelineChart" width="800" height="200"></canvas>
+                                </div>
+                                <div class="chart-data" id="timelineData" style="display: none;">
+                                    [{"module": "whois", "duration": 10.34406852722168, "status": "success", "icon": "\ud83d\udccb", "color": "#10b981"}]
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            
+                        
+            <div class="section" id="detailed-insights">
+                <h2 class="section-header" onclick="toggleSection('detailed-insights')">
+                    🎯 Detailed Insights & Recommendations
+                    <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="insights-container">
+            
+                        <div class="insight-type-section medium">
+                            <h3>MEDIUM PRIORITY</h3>
+                            <div class="insight-list">
+                        
+                                <div class="detailed-insight">
+                                    <div class="insight-header">
+                                        <span class="insight-badge medium">MEDIUM</span>
+                                        <h4>SSL/TLS Security Weaknesses</h4>
+                                    </div>
+                                    <div class="insight-body">
+                                        <div class="insight-description">
+                                            <p>SSL/TLS security score is 0/100, indicating potential vulnerabilities.</p>
+                                        </div>
+                                        <div class="insight-recommendation">
+                                            <strong>Recommended Action:</strong> Update SSL/TLS configuration and consider certificate renewal.
+                                        </div>
+                                        <div class="insight-metrics">
+                                            <span class="metric">Priority: Medium</span>
+                                            <span class="metric">Impact: Medium</span>
+                                            <span class="metric">Remediation Time: 30 days</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="detailed-insight">
+                                    <div class="insight-header">
+                                        <span class="insight-badge medium">MEDIUM</span>
+                                        <h4>HTTP Security Headers Missing</h4>
+                                    </div>
+                                    <div class="insight-body">
+                                        <div class="insight-description">
+                                            <p>HTTP security headers score is 0/100.</p>
+                                        </div>
+                                        <div class="insight-recommendation">
+                                            <strong>Recommended Action:</strong> Implement missing security headers like CSP, HSTS, and X-Frame-Options.
+                                        </div>
+                                        <div class="insight-metrics">
+                                            <span class="metric">Priority: Medium</span>
+                                            <span class="metric">Impact: Medium</span>
+                                            <span class="metric">Remediation Time: 30 days</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+                        
+            <div class="section" id="module-details">
+                <h2 class="section-header" onclick="toggleSection('module-details')">
+                    🔍 Module Analysis & Raw Data
+                    <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="module-tabs">
+            <div class="tab-headers">
+                        <button class="tab-header success" onclick="openModuleTab(event, 'whois')">
+                            <span class="tab-icon">📋</span>
+                            <span class="tab-title">Whois</span>
+                            <span class="tab-status success"></span>
+                        </button>
+                    </div><div class="tab-contents">
+                        <div id="tab-whois" class="tab-content">
+                            <div class="module-header success">
+                                <h3>📋 Whois Analysis</h3>
+                                <div class="module-stats">
+                                    <span class="stat">Status: <span class="success">success</span></span>
+                                    <span class="stat">Duration: 10.34s</span>
+                                    <span class="stat">Timestamp: 19:56:54</span>
+                                </div>
+                            </div>
+                            <div class="module-body">
+                    <div class="module-details">
+        <div class="detail-section">
+            <h4>WHOIS Information for yahoo.com</h4>
+            <div class="whois-details">
+        
+                <div class="whois-item">
+                    <span class="whois-label">Domain Name:</span>
+                    <span class="whois-value">YAHOO.COM</span>
+                </div>
+                
+                <div class="whois-item">
+                    <span class="whois-label">Registrar:</span>
+                    <span class="whois-value">MarkMonitor Inc.</span>
+                </div>
+                
+                <div class="whois-item">
+                    <span class="whois-label">Created:</span>
+                    <span class="whois-value">1995-01-18T05:00:00Z</span>
+                </div>
+                
+                <div class="whois-item">
+                    <span class="whois-label">Updated:</span>
+                    <span class="whois-value">2024-12-18T09:10:56Z</span>
+                </div>
+                
+                <div class="whois-item">
+                    <span class="whois-label">Domain Age:</span>
+                    <span class="whois-value">
+                        0 days
+                        (0 years)
+                    </span>
+                </div>
+            </div></div></div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            
+                    </div>
+                </div>
+                
+                
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+        // Initialize all charts when document is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            setupChartResizeListeners();
+        });
+        
+        function initializeCharts() {
+            // 1. Risk Distribution Chart
+            try {
+                const riskData = JSON.parse(document.getElementById('riskData').textContent);
+                const riskLabels = ['Critical', 'High', 'Medium', 'Low', 'Info'];
+                const riskValues = [
+                    riskData.critical || 0,
+                    riskData.high || 0,
+                    riskData.medium || 0,
+                    riskData.low || 0,
+                    riskData.info || 0
+                ];
+                const riskColors = ['#ef4444', '#f97316', '#f59e0b', '#10b981', '#6b7280'];
+                
+                const riskCtx = document.getElementById('riskChart').getContext('2d');
+                new Chart(riskCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: riskLabels,
+                        datasets: [{
+                            label: 'Findings Count',
+                            data: riskValues,
+                            backgroundColor: riskColors,
+                            borderColor: riskColors.map(c => c.replace('0.8', '1')),
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            borderSkipped: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                titleFont: { size: 12 },
+                                bodyFont: { size: 11 }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                                ticks: { font: { size: 11 } }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { font: { size: 11, weight: 'bold' } }
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error('Risk chart error:', e); }
+            
+            // 2. Module Status Chart
+            try {
+                const moduleData = JSON.parse(document.getElementById('moduleStatusData').textContent);
+                const moduleCtx = document.getElementById('moduleStatusChart').getContext('2d');
+                new Chart(moduleCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Success', 'Error', 'Warning'],
+                        datasets: [{
+                            data: [
+                                moduleData.success || 0,
+                                moduleData.error || 0,
+                                moduleData.warning || 0
+                            ],
+                            backgroundColor: ['#10b981', '#ef4444', '#f59e0b'],
+                            borderWidth: 2,
+                            borderColor: '#ffffff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { font: { size: 11 } }
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error('Module status chart error:', e); }
+            
+            // 3. Port Distribution Chart
+            try {
+                const portData = JSON.parse(document.getElementById('portData').textContent);
+                const portLabels = portData.map(item => item.service);
+                const portValues = portData.map(item => item.count);
+                
+                const portCtx = document.getElementById('portChart').getContext('2d');
+                new Chart(portCtx, {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: portLabels,
+                        datasets: [{
+                            label: 'Port Count',
+                            data: portValues,
+                            backgroundColor: '#3b82f6',
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { beginAtZero: true, grid: { color: 'rgba(0, 0, 0, 0.05)' } },
+                            y: { grid: { display: false } }
+                        }
+                    }
+                });
+            } catch (e) { console.error('Port chart error:', e); }
+            
+            // 4. Score Gauges
+            createGauge('overallScoreGauge', document.querySelector('.gauge-value').textContent);
+            createGauge('sslScoreGauge', document.querySelectorAll('.gauge-value')[1].textContent);
+            createGauge('httpScoreGauge', document.querySelectorAll('.gauge-value')[2].textContent);
+            
+            // 5. Timeline Chart
+            try {
+                const timelineData = JSON.parse(document.getElementById('timelineData').textContent);
+                const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+                new Chart(timelineCtx, {
+                    type: 'line',
+                    data: {
+                        labels: timelineData.map((item, i) => `Module ${i+1}`),
+                        datasets: [{
+                            label: 'Duration (seconds)',
+                            data: timelineData.map(item => item.duration),
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: 'Duration (seconds)' }
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error('Timeline chart error:', e); }
+        }
+        
+        function createGauge(canvasId, value) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const score = parseInt(value);
+            const color = getScoreColor(score);
+            
+            // Draw gauge
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = Math.min(centerX, centerY) - 10;
+            const startAngle = -Math.PI;
+            const endAngle = startAngle + (Math.PI * 2 * (score / 100));
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw background arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, startAngle, Math.PI);
+            ctx.strokeStyle = '#e5e7eb';
+            ctx.lineWidth = 12;
+            ctx.stroke();
+            
+            // Draw value arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 12;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+        }
+        
+        function getScoreColor(score) {
+            if (score >= 90) return '#10b981';
+            if (score >= 80) return '#3b82f6';
+            if (score >= 70) return '#f59e0b';
+            if (score >= 60) return '#f97316';
+            return '#ef4444';
+        }
+        
+        function setupChartResizeListeners() {
+            const resizeObserver = new ResizeObserver(() => {
+                // Reinitialize charts on resize
+                setTimeout(initializeCharts, 100);
+            });
+            
+            document.querySelectorAll('.chart-container canvas').forEach(canvas => {
+                resizeObserver.observe(canvas.parentElement);
+            });
+        }
+        
+        // Tab functionality
+        function openModuleTab(evt, moduleName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all tab headers
+            document.querySelectorAll('.tab-header').forEach(header => {
+                header.classList.remove('active');
+            });
+            
+            // Show current tab and mark button as active
+            document.getElementById('tab-' + moduleName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Section toggle functionality
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const icon = section.previousElementSibling.querySelector('.toggle-icon');
+            
+            if (section.classList.contains('expanded')) {
+                section.classList.remove('expanded');
+                icon.textContent = '▼';
+            } else {
+                // Close all other sections
+                document.querySelectorAll('.section-content.expanded').forEach(sec => {
+                    sec.classList.remove('expanded');
+                    sec.previousElementSibling.querySelector('.toggle-icon').textContent = '▼';
+                });
+                
+                section.classList.add('expanded');
+                icon.textContent = '▲';
+                
+                // Initialize charts in the newly expanded section
+                setTimeout(initializeCharts, 300);
+            }
+        }
+        </script>
+        
+            </body>
+            </html>
+            

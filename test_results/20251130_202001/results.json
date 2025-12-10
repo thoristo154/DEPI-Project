@@ -1,0 +1,565 @@
+{
+    "scan_info": {
+        "target": "scanme.nmap.org",
+        "domain": "scanme.nmap.org",
+        "type": "domain",
+        "command": "fullscan",
+        "start_time": "2025-11-30T20:20:01.961179",
+        "version": "3.1",
+        "end_time": "2025-11-30T20:42:42.501633",
+        "duration_seconds": 1360.540454
+    },
+    "modules": {
+        "whois": {
+            "domain": "scanme.nmap.org",
+            "query_timestamp": "2025-11-30T20:20:01.961863",
+            "raw_query": {
+                "domain": "scanme.nmap.org",
+                "raw_output": "Malformed request.\r\n>>> Last update of WHOIS database: 2025-11-30T18:20:02Z <<<\r\n\r\nTerms of Use: Access to Public Interest Registry WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Identity Digital except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.  The Registrar of Record identified in this output may have an RDDS service that can be queried for additional information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.\r\n",
+                "whois_server": "whois.pir.org",
+                "query_time": "2025-11-30T20:20:01.961879",
+                "response_time": 1.0359761714935303,
+                "error": null,
+                "success": true
+            },
+            "parsed_data": {},
+            "domain_age": {
+                "domain": "scanme.nmap.org",
+                "creation_date": null,
+                "expiration_date": null,
+                "domain_age_days": null,
+                "domain_age_years": null,
+                "domain_age_category": null,
+                "days_until_expiry": null,
+                "error": "Creation date not found in WHOIS data"
+            },
+            "owner_info": {
+                "domain": "scanme.nmap.org",
+                "registrant_info": {},
+                "admin_info": {},
+                "tech_info": {},
+                "privacy_protection": false,
+                "error": null
+            },
+            "summary": {
+                "domain_registered": false,
+                "registrar_found": false,
+                "name_servers_found": false,
+                "owner_info_found": false,
+                "privacy_protection": false,
+                "lookup_successful": true
+            },
+            "error": null,
+            "duration": 2.89017391204834,
+            "status": "success"
+        },
+        "directory": {
+            "target_url": "https://scanme.nmap.org",
+            "scan_timestamp": "2025-11-30 20:20:01",
+            "wordlist_source": "default",
+            "scan_parameters": {
+                "method": "GET",
+                "use_extensions": true,
+                "max_threads": 20,
+                "timeout": 10
+            },
+            "enumeration": {
+                "target_url": "https://scanme.nmap.org",
+                "scan_method": "GET",
+                "total_paths_tested": 0,
+                "interesting_paths_found": 0,
+                "scan_duration": 0,
+                "findings_by_classification": {},
+                "results": [],
+                "error": "Base URL unreachable: Request error: [Errno 101] Network is unreachable"
+            },
+            "summary": {
+                "scan_successful": false
+            },
+            "error": "Base URL unreachable: Request error: [Errno 101] Network is unreachable",
+            "wordlist_entries_count": 4750,
+            "duration": 3.034733772277832,
+            "status": "error"
+        },
+        "network": {
+            "target": "scanme.nmap.org",
+            "scan_timestamp": 1764526801.9658148,
+            "resolution": {
+                "target": "scanme.nmap.org",
+                "ip_addresses": [
+                    "2600:3c01::f03c:91ff:fe18:bb2f",
+                    "45.33.32.156"
+                ],
+                "hostnames": [
+                    "scanme.nmap.org"
+                ],
+                "resolution_time": 0.01577448844909668,
+                "error": null
+            },
+            "reachability": {
+                "target": "scanme.nmap.org",
+                "reachable": true,
+                "packets_sent": 4,
+                "packets_received": 4,
+                "packet_loss": 0.0,
+                "avg_rtt": 197.417,
+                "min_rtt": 196.167,
+                "max_rtt": 200.431,
+                "error": null
+            },
+            "port_scan": {
+                "target": "scanme.nmap.org",
+                "scan_type": "tcp",
+                "ports_scanned": 26,
+                "open_ports": [],
+                "closed_ports": [],
+                "filtered_ports": [
+                    445,
+                    139,
+                    110,
+                    9200,
+                    5432,
+                    21,
+                    143,
+                    53,
+                    993,
+                    27017,
+                    80,
+                    23,
+                    22,
+                    111,
+                    135,
+                    25,
+                    6379,
+                    443,
+                    3306,
+                    5900,
+                    8080,
+                    9300,
+                    3389,
+                    1723,
+                    8443,
+                    995
+                ],
+                "scan_duration": 0.028963327407836914,
+                "start_time": 1764526814.4039655,
+                "error": null,
+                "completion_time": 1764526814.4329302
+            },
+            "services": {},
+            "scan_duration": 12.467316389083862,
+            "summary": {
+                "host_reachable": true,
+                "open_ports_count": 0,
+                "services_identified": 0,
+                "scan_successful": true,
+                "total_duration": 12.467316389083862
+            },
+            "start_time": 1764526801.9658153,
+            "duration": 12.467727661132812,
+            "status": "success"
+        },
+        "http": {
+            "target": "scanme.nmap.org",
+            "analysis_timestamp": "2025-11-30 20:20:01",
+            "server_banner": {
+                "target": "scanme.nmap.org",
+                "protocol": "https",
+                "port": 443,
+                "server_banner": null,
+                "response_code": null,
+                "connection_success": false,
+                "ssl_certificate": {},
+                "response_headers": {},
+                "response_time": 0,
+                "error": "Unexpected error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "http_headers": {
+                "target": "scanme.nmap.org",
+                "path": "/",
+                "headers": {},
+                "response_code": null,
+                "content_type": null,
+                "content_length": null,
+                "cookies": [],
+                "redirect_chain": [],
+                "response_hash": null,
+                "error": "Header retrieval error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "technologies": {
+                "target": "scanme.nmap.org",
+                "technologies": {},
+                "confidence_levels": {},
+                "detection_methods": {},
+                "technology_count": 0,
+                "error": "Header retrieval error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "security_headers": {
+                "target": "scanme.nmap.org",
+                "security_headers": {},
+                "missing_headers": [],
+                "score": 0,
+                "max_score": 0,
+                "recommendations": [],
+                "risk_assessment": {},
+                "error": "Header retrieval error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "performance_metrics": {
+                "total_analysis_time": 15.214990377426147,
+                "server_response_time": 0
+            },
+            "summary": {
+                "server_identified": false,
+                "technologies_detected": 0,
+                "security_score": 0,
+                "security_risk": "unknown",
+                "redirects_found": 0,
+                "cookies_found": 0,
+                "analysis_successful": true
+            },
+            "error": null,
+            "duration": 15.215710639953613,
+            "status": "success"
+        },
+        "dns": {
+            "domain": "scanme.nmap.org",
+            "dns_server": "default",
+            "start_time": 1764526801.9628234,
+            "all_records": {
+                "domain": "scanme.nmap.org",
+                "dns_server": "default",
+                "queries": {
+                    "A": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "A",
+                        "records": [
+                            "45.33.32.156"
+                        ],
+                        "dns_server": "default",
+                        "query_time": 0.16644644737243652,
+                        "error": null,
+                        "success": true,
+                        "count": 1
+                    },
+                    "AAAA": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "AAAA",
+                        "records": [
+                            "2600:3c01::f03c:91ff:fe18:bb2f"
+                        ],
+                        "dns_server": "default",
+                        "query_time": 0.17808055877685547,
+                        "error": null,
+                        "success": true,
+                        "count": 1
+                    },
+                    "MX": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "MX",
+                        "records": [],
+                        "dns_server": "default",
+                        "query_time": 0.14643216133117676,
+                        "error": "No MX records found for scanme.nmap.org",
+                        "success": false
+                    },
+                    "NS": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "NS",
+                        "records": [],
+                        "dns_server": "default",
+                        "query_time": 5.00698184967041,
+                        "error": "DNS query timeout for scanme.nmap.org",
+                        "success": false
+                    },
+                    "TXT": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "TXT",
+                        "records": [],
+                        "dns_server": "default",
+                        "query_time": 0.07800626754760742,
+                        "error": "No TXT records found for scanme.nmap.org",
+                        "success": false
+                    },
+                    "CNAME": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "CNAME",
+                        "records": [],
+                        "dns_server": "default",
+                        "query_time": 5.006420373916626,
+                        "error": "DNS query timeout for scanme.nmap.org",
+                        "success": false
+                    },
+                    "SOA": {
+                        "domain": "scanme.nmap.org",
+                        "record_type": "SOA",
+                        "records": [],
+                        "dns_server": "default",
+                        "query_time": 5.006441116333008,
+                        "error": "DNS query timeout for scanme.nmap.org",
+                        "success": false
+                    }
+                },
+                "total_records": 2,
+                "query_time": 15.588883399963379
+            },
+            "zone_transfer": {
+                "domain": "scanme.nmap.org",
+                "nameserver": null,
+                "success": false,
+                "records": [],
+                "error": "No nameservers found for domain"
+            },
+            "subdomains": {
+                "attempted": false,
+                "discovered": []
+            },
+            "reverse_lookups": [
+                {
+                    "ip": "45.33.32.156",
+                    "result": {
+                        "domain": "45.33.32.156",
+                        "record_type": "PTR",
+                        "records": [],
+                        "dns_server": "default",
+                        "query_time": 5.006279468536377,
+                        "error": "DNS query timeout for 45.33.32.156",
+                        "success": false
+                    }
+                }
+            ],
+            "end_time": 1764526827.564842,
+            "duration": 25.602195978164673,
+            "summary": {
+                "total_records": 2,
+                "subdomains_discovered": 0,
+                "zone_transfer_successful": false,
+                "enumeration_successful": true
+            },
+            "status": "success"
+        },
+        "ssl": {
+            "host": "scanme.nmap.org",
+            "port": 443,
+            "timestamp": "2025-11-30T18:20:01.970964+00:00",
+            "certificate": {
+                "host": "scanme.nmap.org",
+                "port": 443,
+                "certificate_chain": [],
+                "certificate_details": {},
+                "fingerprints": {},
+                "status": "error",
+                "error": "Failed to establish SSL connection"
+            },
+            "supported_protocols": {
+                "host": "scanme.nmap.org",
+                "port": 443,
+                "supported_protocols": [],
+                "unsupported_protocols": [
+                    "TLS",
+                    "TLSv1.0",
+                    "TLSv1.1",
+                    "TLSv1.2"
+                ],
+                "security_assessment": {
+                    "issues": [
+                        "No modern TLS protocols supported"
+                    ],
+                    "warnings": [],
+                    "recommendations": [
+                        "Enable TLSv1.3 for best security"
+                    ],
+                    "overall_rating": "critical"
+                },
+                "details": {
+                    "TLS": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    },
+                    "TLSv1.0": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    },
+                    "TLSv1.1": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    },
+                    "TLSv1.2": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    }
+                },
+                "status": "success"
+            },
+            "supported_ciphers": {
+                "host": "scanme.nmap.org",
+                "port": 443,
+                "supported_ciphers": [],
+                "unsupported_ciphers": [
+                    "TLS_AES_256_GCM_SHA384",
+                    "TLS_CHACHA20_POLY1305_SHA256",
+                    "TLS_AES_128_GCM_SHA256",
+                    "ECDHE-RSA-AES256-GCM-SHA384",
+                    "ECDHE-ECDSA-AES256-GCM-SHA384",
+                    "ECDHE-RSA-CHACHA20-POLY1305",
+                    "ECDHE-RSA-AES128-GCM-SHA256",
+                    "ECDHE-ECDSA-AES128-GCM-SHA256",
+                    "DHE-RSA-AES256-GCM-SHA384",
+                    "DHE-RSA-AES128-GCM-SHA256",
+                    "ECDHE-RSA-AES256-SHA384",
+                    "ECDHE-RSA-AES256-SHA",
+                    "AES256-GCM-SHA384",
+                    "AES256-SHA256",
+                    "AES256-SHA",
+                    "DES-CBC3-SHA",
+                    "RC4-SHA",
+                    "RC4-MD5",
+                    "NULL-SHA"
+                ],
+                "cipher_analysis": {
+                    "issues": [
+                        "No strong ciphers supported"
+                    ],
+                    "warnings": [],
+                    "recommendations": [],
+                    "overall_rating": "poor"
+                },
+                "security_summary": {
+                    "strong": 0,
+                    "good": 0,
+                    "weak": 0,
+                    "deprecated": 0
+                },
+                "details": {
+                    "TLS_AES_256_GCM_SHA384": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "TLS_CHACHA20_POLY1305_SHA256": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "TLS_AES_128_GCM_SHA256": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "ECDHE-RSA-AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    },
+                    "ECDHE-ECDSA-AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "[Errno 111] Connection refused"
+                    },
+                    "ECDHE-RSA-CHACHA20-POLY1305": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    },
+                    "ECDHE-RSA-AES128-GCM-SHA256": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    },
+                    "ECDHE-ECDSA-AES128-GCM-SHA256": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    },
+                    "DHE-RSA-AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    },
+                    "DHE-RSA-AES128-GCM-SHA256": {
+                        "status": "error",
+                        "error": "[Errno 111] Connection refused"
+                    },
+                    "ECDHE-RSA-AES256-SHA384": {
+                        "status": "error",
+                        "error": "[Errno 111] Connection refused"
+                    },
+                    "ECDHE-RSA-AES256-SHA": {
+                        "status": "error",
+                        "error": "[Errno 111] Connection refused"
+                    },
+                    "AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    },
+                    "AES256-SHA256": {
+                        "status": "error",
+                        "error": "[Errno 111] Connection refused"
+                    },
+                    "AES256-SHA": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "DES-CBC3-SHA": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "RC4-SHA": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "RC4-MD5": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "NULL-SHA": {
+                        "status": "error",
+                        "error": "[Errno -3] Temporary failure in name resolution"
+                    }
+                },
+                "status": "success"
+            },
+            "certificate_expiry": {
+                "host": "scanme.nmap.org",
+                "port": 443,
+                "status": "error",
+                "error": "Failed to retrieve certificate"
+            },
+            "security_assessment": {
+                "critical_issues": [
+                    "No modern TLS protocols supported",
+                    "No strong ciphers supported"
+                ],
+                "warnings": [],
+                "recommendations": [
+                    "Immediate remediation required for critical issues",
+                    "Enable TLSv1.3 for best security"
+                ],
+                "overall_status": "critical"
+            },
+            "scan_duration": 268.9310350418091,
+            "status": "success",
+            "duration": 268.9313507080078
+        },
+        "subdomain": {
+            "domain": "scanme.nmap.org",
+            "wordlist_source": "default",
+            "wordlist_size": 4989,
+            "record_types": [
+                "A"
+            ],
+            "start_time": 1764526801.9756672,
+            "discovered_subdomains": [],
+            "statistics": {
+                "total_tested": 4989,
+                "resolved": 0,
+                "nxdomain": 4989,
+                "timeout": 0,
+                "errors": 0
+            },
+            "end_time": 1764528162.4840243,
+            "duration_seconds": 1360.5083570480347,
+            "status": "success",
+            "discovered_count": 0,
+            "success_rate": 0.0,
+            "requests_per_second": 3.667011653515228,
+            "duration": 1360.5341954231262
+        }
+    },
+    "summary": {
+        "total_modules": 7,
+        "successful": 6,
+        "failed": 1,
+        "success_rate": 85.71428571428571
+    }
+}

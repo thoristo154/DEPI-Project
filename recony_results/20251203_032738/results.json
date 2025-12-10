@@ -1,0 +1,33 @@
+{
+    "scan_info": {
+        "target": "mail.yahoo.com",
+        "domain": "mail.yahoo.com",
+        "type": "domain",
+        "command": "ssl",
+        "start_time": "2025-12-03T03:27:39.617547",
+        "version": "3.4",
+        "end_time": "2025-12-03T03:27:41.076610"
+    },
+    "modules": {
+        "ssl": {
+            "host": "mail.yahoo.com",
+            "port": 443,
+            "status": "success",
+            "certificate": {},
+            "protocols": {
+                "TLSv1.0": true,
+                "TLSv1.1": true,
+                "TLSv1.2": true,
+                "TLSv1.3": true
+            },
+            "security_assessment": {
+                "rating": "F",
+                "issues": [
+                    "Supports Legacy TLS (1.0/1.1)",
+                    "Weak Ciphers: NULL (NULL-SHA)"
+                ]
+            },
+            "duration": 1.4582715034484863
+        }
+    }
+}

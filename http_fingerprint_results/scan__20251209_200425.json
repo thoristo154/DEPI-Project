@@ -1,0 +1,120 @@
+{
+  "target": "juice-shop.herokuapp.com",
+  "final_url": "https://juice-shop.herokuapp.com/",
+  "response_code": 503,
+  "server_banner": "Heroku",
+  "scan_timestamp": "2025-12-09T20:04:14.204025",
+  "ip_address": "54.73.53.134",
+  "technologies": [],
+  "cdn_waf": [],
+  "security_score": 2.61,
+  "security_grade": "F",
+  "security_headers": [
+    {
+      "name": "strict-transport-security",
+      "value": null,
+      "status": "missing",
+      "weight": 25,
+      "recommendation": "max-age=31536000; includeSubDomains; preload",
+      "score": 0
+    },
+    {
+      "name": "content-security-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 25,
+      "recommendation": "default-src 'self'; script-src 'self'; object-src 'none';",
+      "score": 0
+    },
+    {
+      "name": "x-content-type-options",
+      "value": null,
+      "status": "missing",
+      "weight": 15,
+      "recommendation": "nosniff",
+      "score": 0
+    },
+    {
+      "name": "x-frame-options",
+      "value": null,
+      "status": "missing",
+      "weight": 15,
+      "recommendation": "DENY",
+      "score": 0
+    },
+    {
+      "name": "referrer-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 10,
+      "recommendation": "strict-origin-when-cross-origin",
+      "score": 0
+    },
+    {
+      "name": "permissions-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 10,
+      "recommendation": "camera=(), microphone=(), geolocation=()",
+      "score": 0
+    },
+    {
+      "name": "cross-origin-opener-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 5,
+      "recommendation": "same-origin",
+      "score": 0
+    },
+    {
+      "name": "x-xss-protection",
+      "value": null,
+      "status": "missing",
+      "weight": 5,
+      "recommendation": "1; mode=block",
+      "score": 0
+    },
+    {
+      "name": "cache-control",
+      "value": "no-cache, no-store",
+      "status": "secure",
+      "weight": 3,
+      "recommendation": "no-store, no-cache, must-revalidate",
+      "score": 3
+    },
+    {
+      "name": "pragma",
+      "value": null,
+      "status": "missing",
+      "weight": 2,
+      "recommendation": "no-cache",
+      "score": 0
+    }
+  ],
+  "vulnerabilities": [
+    "Missing essential security header: strict-transport-security",
+    "Missing essential security header: content-security-policy",
+    "Missing essential security header: x-content-type-options",
+    "Missing essential security header: x-frame-options"
+  ],
+  "response_time": 10.896,
+  "raw_headers": {
+    "Cache-Control": "no-cache, no-store",
+    "Content-Type": "text/html; charset=utf-8",
+    "Nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+    "Report-To": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=7xqARHigVgxQMGo%2BeCEk9UpIlExAk8At44S247kl574%3D\\u0026sid=812dcc77-0bd0-43b1-a5f1-b25750382959\\u0026ts=1765303455\"}],\"max_age\":3600}",
+    "Reporting-Endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=7xqARHigVgxQMGo%2BeCEk9UpIlExAk8At44S247kl574%3D&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&ts=1765303455\"",
+    "Server": "Heroku",
+    "Via": "1.1 heroku-router",
+    "Date": "Tue, 09 Dec 2025 18:04:25 GMT",
+    "Content-Length": "567",
+    "Connection": "close"
+  },
+  "cookies": [],
+  "redirects": [],
+  "scan_metadata": {
+    "scan_timestamp": "2025-12-09T20:04:25.172784",
+    "tool_version": "2.0.0",
+    "output_format": "json"
+  }
+}

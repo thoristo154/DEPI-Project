@@ -1,0 +1,99 @@
+{
+    "scan_info": {
+        "target": "yahoo.com",
+        "domain": "yahoo.com",
+        "type": "domain",
+        "command": "http",
+        "start_time": "2025-12-03T15:33:49.817947",
+        "version": "3.4",
+        "end_time": "2025-12-03T15:33:53.000577"
+    },
+    "modules": {
+        "http": {
+            "target": "yahoo.com",
+            "status": "success",
+            "final_url": "https://www.yahoo.com:443/",
+            "response_code": 200,
+            "server_banner": {
+                "server_banner": "ATS"
+            },
+            "cdn_waf": [],
+            "security_assessment": {
+                "grade": "C",
+                "score": 70,
+                "details": {
+                    "Strict-Transport-Security": {
+                        "value": "max-age=31536000",
+                        "status": "Secure",
+                        "description": "Enforces HTTPS connections."
+                    },
+                    "Content-Security-Policy": {
+                        "value": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=40kocm5kj0f20&partner=;",
+                        "status": "Weak Configuration",
+                        "description": "Prevents Cross-Site Scripting (XSS) and unsafe resource loads."
+                    },
+                    "X-Frame-Options": {
+                        "value": "SAMEORIGIN",
+                        "status": "Secure",
+                        "description": "Prevents Clickjacking attacks."
+                    },
+                    "X-Content-Type-Options": {
+                        "value": "nosniff",
+                        "status": "Secure",
+                        "description": "Prevents MIME-sniffing attacks."
+                    },
+                    "Referrer-Policy": {
+                        "value": "no-referrer-when-downgrade",
+                        "status": "Secure",
+                        "description": "Controls how much referrer info is sent."
+                    },
+                    "Permissions-Policy": {
+                        "value": null,
+                        "status": "Missing",
+                        "description": "Controls browser features and APIs."
+                    },
+                    "Cross-Origin-Opener-Policy": {
+                        "value": null,
+                        "status": "Missing",
+                        "description": "Isolation for window objects (security hardening)."
+                    },
+                    "X-XSS-Protection": {
+                        "value": "1; mode=block",
+                        "status": "Secure",
+                        "description": "Legacy XSS mitigation (informational)."
+                    }
+                },
+                "missing_headers": [
+                    "Permissions-Policy",
+                    "Cross-Origin-Opener-Policy"
+                ]
+            },
+            "technologies": {
+                "detected": {},
+                "count": 0
+            },
+            "raw": {
+                "headers": {
+                    "expect-ct": "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only",
+                    "referrer-policy": "no-referrer-when-downgrade",
+                    "strict-transport-security": "max-age=31536000",
+                    "x-content-type-options": "nosniff",
+                    "x-frame-options": "SAMEORIGIN",
+                    "x-xss-protection": "1; mode=block",
+                    "content-type": "text/html; charset=utf-8",
+                    "date": "Wed, 03 Dec 2025 13:33:52 GMT",
+                    "x-envoy-upstream-service-time": "42",
+                    "server": "ATS",
+                    "Age": "0",
+                    "Cache-Control": "no-store, no-cache, max-age=0, private",
+                    "Expires": "-1",
+                    "Content-Security-Policy": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=40kocm5kj0f20&partner=;",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "close"
+                },
+                "cookies": []
+            },
+            "duration": 3.182431221008301
+        }
+    }
+}

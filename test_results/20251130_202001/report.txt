@@ -1,0 +1,26 @@
+================================================================================
+RECONY SCAN REPORT - scanme.nmap.org
+================================================================================
+
+SCAN METADATA
+--------------------
+Domain: scanme.nmap.org
+Start:  2025-11-30T20:20:01.961179
+End:    2025-11-30T20:42:42.501633
+Duration: 1360.54s
+
+NETWORK SCAN
+--------------------
+No open ports found.
+
+SUBDOMAINS
+--------------------
+Total Discovered: 0
+
+HTTP ANALYSIS
+--------------------
+Server: None
+
+DIRECTORY ENUMERATION
+--------------------
+

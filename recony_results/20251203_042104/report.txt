@@ -1,0 +1,26 @@
+================================================================================
+RECONY SCAN REPORT - yahoo.com
+================================================================================
+
+SCAN METADATA
+--------------------
+Start:  2025-12-03T04:21:05.942259
+End:    2025-12-03T04:21:21.306906
+Type:   dns
+
+DNS ENUMERATION
+--------------------
+[AAAA] Records:
+  - 2001:4998:24:120d::1:1
+  - 2001:4998:24:120d::1:0
+  - 2001:4998:124:1507::f000
+  - 2001:4998:44:3507::8001
+  - 2001:4998:124:1507::f001
+  - 2001:4998:44:3507::8000
+[MX] Records:
+  - {'preference': 1, 'exchange': 'mta7.am0.yahoodns.net.'}
+  - {'preference': 1, 'exchange': 'mta5.am0.yahoodns.net.'}
+  - {'preference': 1, 'exchange': 'mta6.am0.yahoodns.net.'}
+[SOA] Records:
+  - {'mname': 'ns1.yahoo.com.', 'rname': 'hostmaster.yahoo-inc.com.', 'serial': 2025120208, 'expire': 1814400}
+

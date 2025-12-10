@@ -1,0 +1,75 @@
+{
+    "scan_info": {
+        "target": "yahoo.com",
+        "domain": "yahoo.com",
+        "type": "domain",
+        "command": "http",
+        "start_time": "2025-12-03T15:13:08.925971",
+        "version": "3.4",
+        "end_time": "2025-12-03T15:13:11.126379"
+    },
+    "modules": {
+        "http": {
+            "target": "yahoo.com",
+            "analysis_timestamp": "2025-12-03 15:13:08",
+            "server_banner": {
+                "target": "yahoo.com",
+                "protocol": "https",
+                "port": 443,
+                "server_banner": null,
+                "response_code": null,
+                "connection_success": false,
+                "ssl_certificate": {},
+                "response_headers": {},
+                "response_time": 0,
+                "error": "Unexpected error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "http_headers": {
+                "target": "yahoo.com",
+                "path": "/",
+                "headers": {},
+                "response_code": null,
+                "content_type": null,
+                "content_length": null,
+                "cookies": [],
+                "redirect_chain": [],
+                "response_hash": null,
+                "error": "Header retrieval error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "technologies": {
+                "target": "yahoo.com",
+                "technologies": {},
+                "confidence_levels": {},
+                "detection_methods": {},
+                "technology_count": 0,
+                "error": "Header retrieval error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "security_headers": {
+                "target": "yahoo.com",
+                "security_headers": {},
+                "missing_headers": [],
+                "score": 0,
+                "max_score": 0,
+                "recommendations": [],
+                "risk_assessment": {},
+                "error": "Header retrieval error: [SSL: RECORD_LAYER_FAILURE] record layer failure (_ssl.c:1033)"
+            },
+            "performance_metrics": {
+                "total_analysis_time": 2.1989071369171143,
+                "server_response_time": 0
+            },
+            "summary": {
+                "server_identified": false,
+                "technologies_detected": 0,
+                "security_score": 0,
+                "security_risk": "unknown",
+                "redirects_found": 0,
+                "cookies_found": 0,
+                "analysis_successful": true
+            },
+            "error": null,
+            "duration": 2.2001614570617676,
+            "status": "success"
+        }
+    }
+}

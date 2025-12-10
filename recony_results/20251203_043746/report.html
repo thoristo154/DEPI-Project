@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Assessment Report</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        
+        :root {
+            /* Color Palette - Professional */
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #3182ce;
+            --success-color: #38a169;
+            --warning-color: #d69e2e;
+            --error-color: #e53e3e;
+            --info-color: #718096;
+            
+            /* Neutral Colors */
+            --light-bg: #f7fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --text-light: #a0aec0;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--light-bg);
+            padding: var(--spacing-lg);
+            font-size: 14px;
+        }
+        
+        .report-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+        }
+        
+        /* Header Styles */
+        .report-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .report-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+        
+        .report-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.5px;
+        }
+        
+        .report-meta {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+        
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        /* Executive Summary */
+        .executive-summary {
+            padding: var(--spacing-xl);
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .summary-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .summary-card.performance {
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .summary-card.risk {
+            border-top: 4px solid var(--error-color);
+        }
+        
+        .summary-card.risk.low {
+            border-top-color: var(--success-color);
+        }
+        
+        .summary-card.risk.medium {
+            border-top-color: var(--warning-color);
+        }
+        
+        .summary-card.risk.high {
+            border-top-color: var(--error-color);
+        }
+        
+        .summary-card.findings {
+            border-top: 4px solid var(--info-color);
+        }
+        
+        .summary-card.coverage {
+            border-top: 4px solid var(--success-color);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .metric-description {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        /* Key Insights */
+        .key-insights {
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .insights-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            padding: var(--spacing-md);
+            background: var(--light-bg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .insight-bullet {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: var(--spacing-md);
+            margin-top: 6px;
+        }
+        
+        .insight-text {
+            flex: 1;
+            line-height: 1.5;
+        }
+        
+        /* Assessment Overview */
+        .assessment-overview {
+            background: var(--light-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .overview-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .overview-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .overview-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .overview-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .overview-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .status-completed {
+            color: var(--success-color);
+            font-weight: 600;
+        }
+        
+        .status-error {
+            color: var(--error-color);
+            font-weight: 600;
+        }
+        
+        /* Module Statistics */
+        .module-statistics {
+            padding: var(--spacing-xl);
+            background: var(--light-bg);
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .module-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .module-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .module-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .module-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-success {
+            background: rgba(56, 161, 105, 0.1);
+            color: var(--success-color);
+            border: 1px solid rgba(56, 161, 105, 0.3);
+        }
+        
+        .status-error {
+            background: rgba(229, 62, 62, 0.1);
+            color: var(--error-color);
+            border: 1px solid rgba(229, 62, 62, 0.3);
+        }
+        
+        .status-warning {
+            background: rgba(214, 158, 46, 0.1);
+            color: var(--warning-color);
+            border: 1px solid rgba(214, 158, 46, 0.3);
+        }
+        
+        .status-unknown {
+            background: rgba(113, 128, 150, 0.1);
+            color: var(--info-color);
+            border: 1px solid rgba(113, 128, 150, 0.3);
+        }
+        
+        .module-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .metric-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .quality-high {
+            color: var(--success-color);
+        }
+        
+        .quality-medium {
+            color: var(--warning-color);
+        }
+        
+        .quality-low {
+            color: var(--error-color);
+        }
+        
+        .quality-none {
+            color: var(--text-light);
+        }
+        
+        .key-metrics {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .metrics-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        
+        .key-metric {
+            background: var(--light-bg);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            text-align: center;
+        }
+        
+        .key-metric-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .key-metric-value {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .module-findings {
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--spacing-md);
+        }
+        
+        .findings-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .findings-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .finding-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .finding-bullet {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: var(--spacing-sm);
+            margin-top: 6px;
+        }
+        
+        .finding-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+        
+        /* Technical Details */
+        .technical-details {
+            padding: var(--spacing-xl);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .detail-card {
+            background: var(--light-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+        
+        .detail-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .detail-content {
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .detail-content p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .methodology-list,
+        .collection-list,
+        .limitations-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .methodology-list li,
+        .collection-list li,
+        .limitations-list li {
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+        
+        .methodology-list li::before,
+        .collection-list li::before,
+        .limitations-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        /* Footer */
+        .report-footer {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-xl);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-legal {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-lg);
+        }
+        
+        .legal-text {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .report-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .report-header {
+                background: white !important;
+                color: var(--primary-color) !important;
+                border-bottom: 2px solid var(--border-color);
+            }
+            
+            .module-card {
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid var(--border-color);
+            }
+            
+            .summary-card {
+                box-shadow: none !important;
+                border: 1px solid var(--border-color);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: var(--spacing-sm);
+            }
+            
+            .report-title {
+                font-size: 2rem;
+            }
+            
+            .report-meta {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .report-header {
+                padding: var(--spacing-lg);
+            }
+            
+            .report-title {
+                font-size: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .module-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="report-container">
+
+        <header class="report-header">
+            <div class="header-content">
+                <h1 class="report-title">Security Assessment Report</h1>
+                <div class="report-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Report ID:</span>
+                        <span class="meta-value">RPT-20251203043821-C6A32661</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Generated:</span>
+                        <span class="meta-value">2025-12-03 04:38:21</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Version:</span>
+                        <span class="meta-value">2.0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="executive-summary">
+            <h2 class="section-title">Executive Summary</h2>
+            
+            <div class="summary-grid">
+                <!-- Performance Metrics -->
+                <div class="summary-card performance">
+                    <div class="metric-value">0.0%</div>
+                    <div class="metric-label">Success Rate</div>
+                    <div class="metric-description">Module execution performance</div>
+                </div>
+                
+                <!-- Risk Assessment -->
+                <div class="summary-card risk low">
+                    <div class="metric-value">LOW</div>
+                    <div class="metric-label">Risk Level</div>
+                    <div class="metric-description">Overall security assessment</div>
+                </div>
+                
+                <!-- Findings Count -->
+                <div class="summary-card findings">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Total Findings</div>
+                    <div class="metric-description">Security observations</div>
+                </div>
+                
+                <!-- Module Coverage -->
+                <div class="summary-card coverage">
+                    <div class="metric-value">0/1</div>
+                    <div class="metric-label">Modules Complete</div>
+                    <div class="metric-description">Assessment coverage</div>
+                </div>
+            </div>
+            
+            <!-- Key Insights -->
+            <div class="key-insights">
+                <h3 class="insights-title">Key Insights</h3>
+                <div class="insights-grid">
+        
+        <section class="module-statistics">
+            <h2 class="section-title">Module Analysis</h2>
+            <div class="modules-grid">
+        
+        <div class="module-card">
+            <div class="module-header">
+                <h3 class="module-title">Modules</h3>
+                <div class="module-status status-unknown">UNKNOWN</div>
+            </div>
+            
+            <div class="module-metrics">
+                <div class="metric-item">
+                    <span class="metric-label">Data Points:</span>
+                    <span class="metric-value">1</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Data Quality:</span>
+                    <span class="metric-value quality-low">LOW</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Execution Time:</span>
+                    <span class="metric-value">0.00s</span>
+                </div>
+            </div>
+            
+            <!-- Key Metrics -->
+            <div class="key-metrics">
+                <h4 class="metrics-title">Key Metrics</h4>
+                <div class="metrics-grid">
+        
+                    <div class="key-metric">
+                        <div class="key-metric-label">Ssl Count</div>
+                        <div class="key-metric-value">9</div>
+                    </div>
+            
+                </div>
+            </div>
+            
+            <!-- Findings -->
+            <div class="module-findings">
+                <h4 class="findings-title">Key Findings</h4>
+                <div class="findings-list">
+        
+                    <div class="finding-item">
+                        <div class="finding-bullet"></div>
+                        <div class="finding-text">No significant findings</div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        </section>
+        
+        <section class="technical-details">
+            <h2 class="section-title">Technical Details</h2>
+            
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3 class="detail-title">Methodology</h3>
+                    <div class="detail-content">
+                        <p>This assessment was conducted using Recony Security Scanner v2.0, employing standardized security testing methodologies including:</p>
+                        <ul class="methodology-list">
+                            <li>Comprehensive network reconnaissance</li>
+                            <li>DNS infrastructure analysis</li>
+                            <li>Web application security testing</li>
+                            <li>SSL/TLS configuration assessment</li>
+                            <li>Information disclosure analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <h3 class="detail-title">Data Collection</h3>
+                    <div class="detail-content">
+                        <p>Data was collected through automated scanning processes, including:</p>
+                        <ul class="collection-list">
+                            <li>Active network probing</li>
+                            <li>DNS query analysis</li>
+                            <li>HTTP header inspection</li>
+                            <li>Certificate validation</li>
+                            <li>Directory enumeration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <h3 class="detail-title">Limitations</h3>
+                    <div class="detail-content">
+                        <p>This automated assessment has the following limitations:</p>
+                        <ul class="limitations-list">
+                            <li>Limited to externally accessible services</li>
+                            <li>May trigger security monitoring systems</li>
+                            <li>Results may vary based on network conditions</li>
+                            <li>Requires manual validation of findings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="report-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Report Information</h4>
+                    <p class="footer-text">
+                        This report was automatically generated by Recony Security Scanner. 
+                        All findings should be validated by qualified security professionals.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Confidentiality</h4>
+                    <p class="footer-text">
+                        This document contains confidential security assessment data. 
+                        Distribution should be limited to authorized personnel only.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Document Version</h4>
+                    <p class="footer-text">
+                        Recony Security Scanner v2.0<br>
+                        Generated: 2025-12-03<br>
+                        Report ID: RPT-20251203043821-057CDB9C
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p class="legal-text">
+                    © 2024 Recony Security Scanner. All rights reserved. 
+                    This report is for security assessment purposes only.
+                </p>
+            </div>
+        </footer>
+        
+        <script>
+        // Module card interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to module cards
+            const moduleCards = document.querySelectorAll('.module-card');
+            
+            moduleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.textContent = 'Print Report';
+            printButton.className = 'print-button';
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            // Add print button to header
+            const header = document.querySelector('.report-header');
+            if (header) {
+                const printContainer = document.createElement('div');
+                printContainer.className = 'print-container';
+                printContainer.appendChild(printButton);
+                header.appendChild(printContainer);
+            }
+            
+            // Initialize metrics animation
+            animateMetrics();
+        });
+        
+        function animateMetrics() {
+            const metricValues = document.querySelectorAll('.metric-value');
+            metricValues.forEach(value => {
+                const text = value.textContent;
+                if (text.includes('%') || text.match(/^\d+\.?\d*$/)) {
+                    // Animate numeric values
+                    value.style.opacity = '0';
+                    setTimeout(() => {
+                        value.style.transition = 'opacity 0.5s ease';
+                        value.style.opacity = '1';
+                    }, 100);
+                }
+            });
+        }
+        
+        // Export functionality
+        function exportReport(format) {
+            if (format === 'pdf') {
+                window.print();
+            } else if (format === 'json') {
+                // In a real implementation, this would export the raw data
+                alert('JSON export would be implemented here');
+            }
+        }
+        </script>
+        
+    </div>
+</body>
+</html>

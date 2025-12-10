@@ -1,0 +1,134 @@
+{
+  "target": "yahoo.com",
+  "final_url": "https://www.yahoo.com/",
+  "response_code": 200,
+  "server_banner": "ATS",
+  "scan_timestamp": "2025-12-03T20:04:25.536538",
+  "ip_address": "74.6.143.25",
+  "technologies": [],
+  "cdn_waf": [],
+  "security_score": 70.0,
+  "security_grade": "C",
+  "security_headers": [
+    {
+      "name": "strict-transport-security",
+      "value": "max-age=31536000",
+      "status": "secure",
+      "weight": 25,
+      "recommendation": "max-age=31536000; includeSubDomains; preload",
+      "score": 25
+    },
+    {
+      "name": "content-security-policy",
+      "value": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=5jrm3flkj0utg&partner=;",
+      "status": "weak",
+      "weight": 25,
+      "recommendation": "default-src 'self'; script-src 'self'; object-src 'none';",
+      "score": 12.5
+    },
+    {
+      "name": "x-content-type-options",
+      "value": "nosniff",
+      "status": "secure",
+      "weight": 15,
+      "recommendation": "nosniff",
+      "score": 15
+    },
+    {
+      "name": "x-frame-options",
+      "value": "SAMEORIGIN",
+      "status": "secure",
+      "weight": 15,
+      "recommendation": "DENY",
+      "score": 15
+    },
+    {
+      "name": "referrer-policy",
+      "value": "no-referrer-when-downgrade",
+      "status": "weak",
+      "weight": 10,
+      "recommendation": "strict-origin-when-cross-origin",
+      "score": 5.0
+    },
+    {
+      "name": "permissions-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 10,
+      "recommendation": "camera=(), microphone=(), geolocation=()",
+      "score": 0
+    },
+    {
+      "name": "cross-origin-opener-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 5,
+      "recommendation": "same-origin",
+      "score": 0
+    },
+    {
+      "name": "x-xss-protection",
+      "value": "1; mode=block",
+      "status": "secure",
+      "weight": 5,
+      "recommendation": "1; mode=block",
+      "score": 5
+    },
+    {
+      "name": "cache-control",
+      "value": "no-store, no-cache, max-age=0, private",
+      "status": "secure",
+      "weight": 3,
+      "recommendation": "no-store, no-cache, must-revalidate",
+      "score": 3
+    },
+    {
+      "name": "pragma",
+      "value": null,
+      "status": "missing",
+      "weight": 2,
+      "recommendation": "no-cache",
+      "score": 0
+    }
+  ],
+  "vulnerabilities": [
+    "Cookie missing Secure flag: <Cookie A1=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "Cookie missing HttpOnly flag: <Cookie A1=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "Cookie missing Secure flag: <Cookie A3=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "Cookie missing HttpOnly flag: <Cookie A3=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "Cookie missing Secure flag: <Cookie A1S=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "Cookie missing HttpOnly flag: <Cookie A1S=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>"
+  ],
+  "response_time": 7.14,
+  "raw_headers": {
+    "expect-ct": "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "strict-transport-security": "max-age=31536000",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "content-type": "text/html; charset=utf-8",
+    "content-encoding": "gzip",
+    "date": "Wed, 03 Dec 2025 18:04:32 GMT",
+    "x-envoy-upstream-service-time": "67",
+    "server": "ATS",
+    "Age": "0",
+    "Cache-Control": "no-store, no-cache, max-age=0, private",
+    "Expires": "-1",
+    "Content-Security-Policy": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=5jrm3flkj0utg&partner=;",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "Set-Cookie": "A1=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0; Expires=Fri, 4 Dec 2026 00:04:32 GMT; Max-Age=31557600; Domain=.yahoo.com; Path=/; SameSite=Lax; Secure; HttpOnly, A3=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0; Expires=Fri, 4 Dec 2026 00:04:32 GMT; Max-Age=31557600; Domain=.yahoo.com; Path=/; SameSite=None; Secure; HttpOnly, A1S=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0; Domain=.yahoo.com; Path=/; SameSite=Lax; Secure"
+  },
+  "cookies": [
+    "<Cookie A1=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "<Cookie A3=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>",
+    "<Cookie A1S=d=AQABBLB7MGkCEB02jwqPUzXv9eZCt67Sh5AFEgEBAQHNMWk6aToOySMA_eMCAA&S=AQAAAgfAK3dGffaqOBGXbr7xSG0 for .yahoo.com/>"
+  ],
+  "redirects": [],
+  "scan_metadata": {
+    "scan_timestamp": "2025-12-03T20:04:32.904607",
+    "tool_version": "2.0.0",
+    "output_format": "json"
+  }
+}

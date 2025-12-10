@@ -1,0 +1,81 @@
+{
+    "scan_info": {
+        "target": "yahoo.com",
+        "domain": "yahoo.com",
+        "type": "domain",
+        "command": "whois",
+        "start_time": "2025-12-09T00:39:11.461365",
+        "version": "3.4",
+        "end_time": "2025-12-09T00:39:11.666010"
+    },
+    "modules": {
+        "whois": {
+            "status": "success",
+            "domain": "yahoo.com",
+            "whois_server": "whois.verisign-grs.com",
+            "registrar": "MarkMonitor Inc.",
+            "age_analysis": {
+                "age_days": 11282,
+                "creation_date": "1995-01-18 05:00:00",
+                "status": "Established"
+            },
+            "parsed_data": {
+                "domain_name": "YAHOO.COM",
+                "registry_domain_id": "3643624_DOMAIN_COM-VRSN",
+                "registrar_whois_server": "whois.markmonitor.com",
+                "registrar_url": "http://www.markmonitor.com",
+                "updated_date": "2024-12-18T09:10:56Z",
+                "creation_date": "1995-01-18T05:00:00Z",
+                "registry_expiry_date": "2026-01-19T05:00:00Z",
+                "registrar": "MarkMonitor Inc.",
+                "registrar_iana_id": "292",
+                "registrar_abuse_contact_email": "abusecomplaints@markmonitor.com",
+                "registrar_abuse_contact_phone": "+1.2086851750",
+                "domain_status": [
+                    "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
+                    "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+                    "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited",
+                    "serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited",
+                    "serverTransferProhibited https://icann.org/epp#serverTransferProhibited",
+                    "serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited"
+                ],
+                "name_server": [
+                    "NS1.YAHOO.COM",
+                    "NS2.YAHOO.COM",
+                    "NS3.YAHOO.COM",
+                    "NS4.YAHOO.COM",
+                    "NS5.YAHOO.COM"
+                ],
+                "dnssec": "unsigned",
+                "url_of_the_icann_whois_inaccuracy_complaint_form": "https://www.icann.org/wicf/"
+            },
+            "raw_lines": [
+                "Domain Name: YAHOO.COM",
+                "Registry Domain ID: 3643624_DOMAIN_COM-VRSN",
+                "Registrar WHOIS Server: whois.markmonitor.com",
+                "Registrar URL: http://www.markmonitor.com",
+                "Updated Date: 2024-12-18T09:10:56Z",
+                "Creation Date: 1995-01-18T05:00:00Z",
+                "Registry Expiry Date: 2026-01-19T05:00:00Z",
+                "Registrar: MarkMonitor Inc.",
+                "Registrar IANA ID: 292",
+                "Registrar Abuse Contact Email: abusecomplaints@markmonitor.com",
+                "Registrar Abuse Contact Phone: +1.2086851750",
+                "Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
+                "Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+                "Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited",
+                "Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited",
+                "Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited",
+                "Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited",
+                "Name Server: NS1.YAHOO.COM",
+                "Name Server: NS2.YAHOO.COM",
+                "Name Server: NS3.YAHOO.COM",
+                "Name Server: NS4.YAHOO.COM",
+                "Name Server: NS5.YAHOO.COM",
+                "DNSSEC: unsigned",
+                "URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/"
+            ],
+            "duration": 0.20440459251403809
+        }
+    }
+}

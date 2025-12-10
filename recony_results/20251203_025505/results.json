@@ -1,0 +1,207 @@
+{
+    "scan_info": {
+        "target": "mail.yahoo.com",
+        "domain": "mail.yahoo.com",
+        "type": "domain",
+        "command": "ssl",
+        "start_time": "2025-12-03T02:55:05.714491",
+        "version": "3.4",
+        "end_time": "2025-12-03T02:58:21.587988"
+    },
+    "modules": {
+        "ssl": {
+            "host": "mail.yahoo.com",
+            "port": 993,
+            "timestamp": "2025-12-03T00:55:05.714816+00:00",
+            "certificate": {
+                "host": "mail.yahoo.com",
+                "port": 993,
+                "certificate_chain": [],
+                "certificate_details": {},
+                "fingerprints": {},
+                "status": "error",
+                "error": "Failed to establish SSL connection"
+            },
+            "supported_protocols": {
+                "host": "mail.yahoo.com",
+                "port": 993,
+                "supported_protocols": [],
+                "unsupported_protocols": [
+                    "TLS",
+                    "TLSv1.0",
+                    "TLSv1.1",
+                    "TLSv1.2"
+                ],
+                "security_assessment": {
+                    "issues": [
+                        "No modern TLS protocols supported"
+                    ],
+                    "warnings": [],
+                    "recommendations": [
+                        "Enable TLSv1.3 for best security"
+                    ],
+                    "overall_rating": "critical"
+                },
+                "details": {
+                    "TLS": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    },
+                    "TLSv1.0": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    },
+                    "TLSv1.1": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    },
+                    "TLSv1.2": {
+                        "status": "unsupported",
+                        "connection_successful": false
+                    }
+                },
+                "status": "success"
+            },
+            "supported_ciphers": {
+                "host": "mail.yahoo.com",
+                "port": 993,
+                "supported_ciphers": [],
+                "unsupported_ciphers": [
+                    "TLS_AES_256_GCM_SHA384",
+                    "TLS_CHACHA20_POLY1305_SHA256",
+                    "TLS_AES_128_GCM_SHA256",
+                    "ECDHE-RSA-AES256-GCM-SHA384",
+                    "ECDHE-ECDSA-AES256-GCM-SHA384",
+                    "ECDHE-RSA-CHACHA20-POLY1305",
+                    "ECDHE-RSA-AES128-GCM-SHA256",
+                    "ECDHE-ECDSA-AES128-GCM-SHA256",
+                    "DHE-RSA-AES256-GCM-SHA384",
+                    "DHE-RSA-AES128-GCM-SHA256",
+                    "ECDHE-RSA-AES256-SHA384",
+                    "ECDHE-RSA-AES256-SHA",
+                    "AES256-GCM-SHA384",
+                    "AES256-SHA256",
+                    "AES256-SHA",
+                    "DES-CBC3-SHA",
+                    "RC4-SHA",
+                    "RC4-MD5",
+                    "NULL-SHA"
+                ],
+                "cipher_analysis": {
+                    "issues": [
+                        "No strong ciphers supported"
+                    ],
+                    "warnings": [],
+                    "recommendations": [],
+                    "overall_rating": "poor"
+                },
+                "security_summary": {
+                    "strong": 0,
+                    "good": 0,
+                    "weak": 0,
+                    "deprecated": 0
+                },
+                "details": {
+                    "TLS_AES_256_GCM_SHA384": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "TLS_CHACHA20_POLY1305_SHA256": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "TLS_AES_128_GCM_SHA256": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "ECDHE-RSA-AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "ECDHE-ECDSA-AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "ECDHE-RSA-CHACHA20-POLY1305": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "ECDHE-RSA-AES128-GCM-SHA256": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "ECDHE-ECDSA-AES128-GCM-SHA256": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "DHE-RSA-AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "DHE-RSA-AES128-GCM-SHA256": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "ECDHE-RSA-AES256-SHA384": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "ECDHE-RSA-AES256-SHA": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "AES256-GCM-SHA384": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "AES256-SHA256": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "AES256-SHA": {
+                        "status": "error",
+                        "error": "timed out"
+                    },
+                    "DES-CBC3-SHA": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "RC4-SHA": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "RC4-MD5": {
+                        "status": "unsupported",
+                        "error": "Cipher not available in OpenSSL"
+                    },
+                    "NULL-SHA": {
+                        "status": "error",
+                        "error": "timed out"
+                    }
+                },
+                "status": "success"
+            },
+            "certificate_expiry": {
+                "host": "mail.yahoo.com",
+                "port": 993,
+                "status": "error",
+                "error": "Failed to retrieve certificate"
+            },
+            "security_assessment": {
+                "critical_issues": [
+                    "No modern TLS protocols supported",
+                    "No strong ciphers supported"
+                ],
+                "warnings": [],
+                "recommendations": [
+                    "Enable TLSv1.3 for best security",
+                    "Immediate remediation required for critical issues"
+                ],
+                "overall_status": "critical"
+            },
+            "scan_duration": 195.87301063537598,
+            "status": "success",
+            "duration": 195.87325382232666
+        }
+    }
+}

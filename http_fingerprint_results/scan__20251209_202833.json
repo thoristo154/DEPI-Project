@@ -1,0 +1,122 @@
+{
+  "target": "microsoft.com",
+  "final_url": "https://www.microsoft.com/",
+  "response_code": 200,
+  "server_banner": "AkamaiNetStorage",
+  "scan_timestamp": "2025-12-09T20:28:30.901521",
+  "ip_address": "13.107.213.60",
+  "technologies": [],
+  "cdn_waf": [
+    "Akamai"
+  ],
+  "security_score": 0.0,
+  "security_grade": "F",
+  "security_headers": [
+    {
+      "name": "strict-transport-security",
+      "value": null,
+      "status": "missing",
+      "weight": 25,
+      "recommendation": "max-age=31536000; includeSubDomains; preload",
+      "score": 0
+    },
+    {
+      "name": "content-security-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 25,
+      "recommendation": "default-src 'self'; script-src 'self'; object-src 'none';",
+      "score": 0
+    },
+    {
+      "name": "x-content-type-options",
+      "value": null,
+      "status": "missing",
+      "weight": 15,
+      "recommendation": "nosniff",
+      "score": 0
+    },
+    {
+      "name": "x-frame-options",
+      "value": null,
+      "status": "missing",
+      "weight": 15,
+      "recommendation": "DENY",
+      "score": 0
+    },
+    {
+      "name": "referrer-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 10,
+      "recommendation": "strict-origin-when-cross-origin",
+      "score": 0
+    },
+    {
+      "name": "permissions-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 10,
+      "recommendation": "camera=(), microphone=(), geolocation=()",
+      "score": 0
+    },
+    {
+      "name": "cross-origin-opener-policy",
+      "value": null,
+      "status": "missing",
+      "weight": 5,
+      "recommendation": "same-origin",
+      "score": 0
+    },
+    {
+      "name": "x-xss-protection",
+      "value": null,
+      "status": "missing",
+      "weight": 5,
+      "recommendation": "1; mode=block",
+      "score": 0
+    },
+    {
+      "name": "cache-control",
+      "value": null,
+      "status": "missing",
+      "weight": 3,
+      "recommendation": "no-store, no-cache, must-revalidate",
+      "score": 0
+    },
+    {
+      "name": "pragma",
+      "value": null,
+      "status": "missing",
+      "weight": 2,
+      "recommendation": "no-cache",
+      "score": 0
+    }
+  ],
+  "vulnerabilities": [
+    "Missing essential security header: strict-transport-security",
+    "Missing essential security header: content-security-policy",
+    "Missing essential security header: x-content-type-options",
+    "Missing essential security header: x-frame-options"
+  ],
+  "response_time": 1.22,
+  "raw_headers": {
+    "Accept-Ranges": "bytes",
+    "Content-Type": "text/html",
+    "ETag": "\"85de642e1467807f64f7e10807df3869:1711562737.176211\"",
+    "Last-Modified": "Tue, 26 Mar 2024 18:16:43 GMT",
+    "Server": "AkamaiNetStorage",
+    "Vary": "Accept-Encoding",
+    "Content-Encoding": "gzip",
+    "Date": "Tue, 09 Dec 2025 18:28:31 GMT",
+    "Content-Length": "12623",
+    "Connection": "close"
+  },
+  "cookies": [],
+  "redirects": [],
+  "scan_metadata": {
+    "scan_timestamp": "2025-12-09T20:28:33.136503",
+    "tool_version": "2.0.0",
+    "output_format": "json"
+  }
+}

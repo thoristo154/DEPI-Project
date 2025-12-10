@@ -1,0 +1,161 @@
+{
+    "scan_info": {
+        "target": "yahoo.com",
+        "domain": "yahoo.com",
+        "type": "domain",
+        "command": "http",
+        "start_time": "2025-12-03T02:45:14.934123",
+        "version": "3.4",
+        "end_time": "2025-12-03T02:45:47.050813"
+    },
+    "modules": {
+        "http": {
+            "target": "yahoo.com",
+            "analysis_timestamp": "2025-12-03 02:45:14",
+            "server_banner": {
+                "target": "yahoo.com",
+                "protocol": "https",
+                "port": 443,
+                "server_banner": "ATS",
+                "response_code": 200,
+                "connection_success": true,
+                "ssl_certificate": {},
+                "response_headers": {
+                    "Date": "Wed, 03 Dec 2025 00:45:21 GMT",
+                    "Strict-Transport-Security": "max-age=31536000",
+                    "Server": "ATS",
+                    "Cache-Control": "no-store, no-cache, max-age=0, private",
+                    "Content-Type": "text/html",
+                    "Content-Language": "en",
+                    "Expires": "-1",
+                    "Content-Security-Policy": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=03stm6hkiv211&partner=;",
+                    "X-Frame-Options": "SAMEORIGIN",
+                    "X-XSS-Protection": "1; mode=block",
+                    "Referrer-Policy": "no-referrer-when-downgrade",
+                    "X-Content-Type-Options": "nosniff",
+                    "Content-Length": "12",
+                    "Age": "0",
+                    "Connection": "keep-alive"
+                },
+                "response_time": 6.522822618484497,
+                "error": null,
+                "final_url": "https://www.yahoo.com:443/"
+            },
+            "http_headers": {
+                "target": "yahoo.com",
+                "path": "/",
+                "headers": {
+                    "expect-ct": "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only",
+                    "referrer-policy": "no-referrer-when-downgrade",
+                    "strict-transport-security": "max-age=31536000",
+                    "x-content-type-options": "nosniff",
+                    "x-frame-options": "SAMEORIGIN",
+                    "x-xss-protection": "1; mode=block",
+                    "content-type": "text/html; charset=utf-8",
+                    "date": "Wed, 03 Dec 2025 00:45:38 GMT",
+                    "x-envoy-upstream-service-time": "72",
+                    "server": "ATS",
+                    "Age": "0",
+                    "Cache-Control": "no-store, no-cache, max-age=0, private",
+                    "Expires": "-1",
+                    "Content-Security-Policy": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=5nbmeplkiv21i&partner=;",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive"
+                },
+                "response_code": 200,
+                "content_type": null,
+                "content_length": null,
+                "cookies": [],
+                "redirect_chain": [
+                    {
+                        "from": "https://yahoo.com/",
+                        "to": "https://www.yahoo.com/",
+                        "status": 301
+                    }
+                ],
+                "response_hash": "1863b5e7c154f4f7efca15f177b5d612",
+                "error": null,
+                "final_url": "https://www.yahoo.com/"
+            },
+            "technologies": {
+                "target": "yahoo.com",
+                "technologies": {},
+                "confidence_levels": {},
+                "detection_methods": {},
+                "technology_count": 0,
+                "error": null
+            },
+            "security_headers": {
+                "target": "yahoo.com",
+                "security_headers": {
+                    "Content-Security-Policy": {
+                        "present": true,
+                        "value": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=0i5f1ehkiv21q&partner=;",
+                        "description": "Prevents XSS attacks",
+                        "recommended": "default-src 'self'",
+                        "risk_level": "high",
+                        "weight": 3,
+                        "score_achieved": 1.5,
+                        "compliance": "partial"
+                    }
+                },
+                "missing_headers": [
+                    "Strict-Transport-Security",
+                    "X-Content-Type-Options",
+                    "X-Frame-Options",
+                    "X-XSS-Protection",
+                    "Referrer-Policy",
+                    "Permissions-Policy",
+                    "Feature-Policy"
+                ],
+                "score": 9.4,
+                "max_score": 16,
+                "recommendations": [
+                    "Add missing security header: Strict-Transport-Security",
+                    "Improve Content-Security-Policy configuration: frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.engadget.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=frontpage&region=US&lang=en-US&device=desktop&yrid=0i5f1ehkiv21q&partner=;",
+                    "Add missing security header: X-Content-Type-Options",
+                    "Add missing security header: X-Frame-Options",
+                    "Add missing security header: X-XSS-Protection",
+                    "Add missing security header: Referrer-Policy",
+                    "Add missing security header: Permissions-Policy",
+                    "Add missing security header: Feature-Policy"
+                ],
+                "risk_assessment": {
+                    "high_risk_issues": [
+                        "Missing Strict-Transport-Security",
+                        "Misconfigured Content-Security-Policy"
+                    ],
+                    "medium_risk_issues": [
+                        "Missing X-Content-Type-Options",
+                        "Missing X-Frame-Options",
+                        "Missing X-XSS-Protection",
+                        "Missing Permissions-Policy"
+                    ],
+                    "low_risk_issues": [
+                        "Missing Referrer-Policy",
+                        "Missing Feature-Policy"
+                    ],
+                    "overall_risk": "high"
+                },
+                "error": null,
+                "assessment": "Poor"
+            },
+            "performance_metrics": {
+                "total_analysis_time": 32.116129875183105,
+                "server_response_time": 6.522822618484497
+            },
+            "summary": {
+                "server_identified": true,
+                "technologies_detected": 0,
+                "security_score": 9.4,
+                "security_risk": "high",
+                "redirects_found": 1,
+                "cookies_found": 0,
+                "analysis_successful": true
+            },
+            "error": null,
+            "duration": 32.11648082733154,
+            "status": "success"
+        }
+    }
+}
